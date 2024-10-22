@@ -1,0 +1,270 @@
+/* @font-face {
+    font-family: 'merriweather_sansregular';
+    src: url('../assets/fonts/Merriweather_Sans/merriweathersans-woff/merriweathersans-variablefont_wght-webfont.woff2') format('woff2'),
+        url('../assets/fonts/Merriweather_Sans/merriweathersans-woff/merriweathersans-variablefont_wght-webfont.woff') format('woff');
+    font-style: normal;
+    font-weight: normal;
+}*/
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+*{
+    font-family: "Merriweather Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-user-select: none; /* compatibilidad safari*/
+    user-select: none; /* No se puede seleccionar el texto, respeta hipervinculos*/
+    p {
+        line-height: 1.5; /* Aumento interlineado párrafos */
+        text-align: justify;
+        padding: 0 1rem;
+    }
+}
+
+h1{
+    color: #1E90FF;
+    font-size: 3rem; /* ver tema unidades relativas */
+    text-align: center;
+    padding: 1rem;
+}
+h2{
+    color: #1E90FF;
+    font-size: 2rem; /* ver tema unidades relativas */
+    text-align: left;
+    padding: 1rem;
+}
+
+header {
+    background-color: #4CAF50; /* Verde */
+    position: sticky; /* fijo el encabezado*/
+    top: 0; /*lo posiciono desde arriba*/
+    z-index: 1; /*para posicionarse encima + (positivo)*/
+    padding: 20px;
+    display: flex;
+    align-items: center; /* centra verticalmente */
+    justify-content: space-between; /* Añade espacio (separa) entre el logo y la navegación */
+    height: 20vh; /* Aseguro que el header tome el tamaño de su contenido */
+    nav ul {
+        list-style: none; /* quito marcadores*/
+        display: flex; /* Alineo elementos lista horizontalmente */
+        li {
+            padding-left: 1rem; /* separo la lsita*/
+            font-size: 1.3rem;
+        }
+    }
+    a{
+        color: #1405e7; /*#1405e7*/
+        text-decoration: none;
+        display: flex;
+        flex-direction: column; /* Alineo elementos verticalmente */
+        align-items: center;
+        img{
+            width: 10vh; /* Ajusto el logo porcentaje ancho view port*/
+            height: auto; /* Mantengo proporción imagen */
+        }
+        h1{
+            color: #1E90FF;
+            font-size: 1rem;
+            text-align: center;
+            padding: .25rem;
+        }
+        h2{
+            color: #ff0000;
+            font-size: .75rem;
+            text-align: center;
+            padding: 0;
+        }
+    }
+}
+
+main {
+    background-color: #FFFFFF;
+    color: #000000; /* Texto negro */
+    padding: 0px;
+    p{
+        padding-top: 0.5rem;
+        text-indent: 2em; /* Ajusta la cantidad de sangría */
+    }
+    h2{
+        font-size: 1.5rem;
+        padding-top: 2.5rem;
+    }
+    ol {
+        margin-left: 1rem;
+        padding-left: 1rem; /* Alinea numeración lista con resto contenido  Main*/
+        padding-bottom: 1rem;
+    }
+}
+
+/*Estilos sección principal Main .index*/
+.prodNaturales {
+    background-image: url(../assets/img/FondoMAM.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100vh;
+    padding: 1rem;
+    .contenedorTextSeccionMainIndex {
+        text-align: center;
+        width: 50%;
+        border: 5px groove #000000;
+        border-radius: 25px; /*redondeo el área*/
+        font-size: 18px;
+        /*propiedades blur y backdrop-blur*/
+       /* filter: blur(10px) brightness(0.5);*/
+       -webkit-backdrop-filter: blur(15px); /* Soporte para Safari */
+       backdrop-filter: blur(10px); /* Marco del área del contenedor*/
+       p{
+        font-size: 1.5em;
+        padding: 1rem;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        }
+        a{
+            text-decoration: none;
+            color: #ff0000;
+            font-size: 1.5em;
+            font-weight: bold;
+            padding: .6rem;
+            border: 3px groove #000000;
+            border-radius: 10px;
+        }
+    }
+}
+
+.productos {
+    display: flex; /* Activar Flexbox */
+    flex-wrap: wrap; /* Permitir que los productos se envuelvan */
+    justify-content: center; /* Distribuir los productos con espacio entre ellos */
+    padding: 20px; /* Relleno interno */
+
+    .producto {
+    background-color: #2196F3; /* Fondo azul */
+    color: white; /* Color del texto */
+    padding: 20px; /* Relleno interno de cada producto */
+    margin: 10px; /* Margen externo de cada producto */
+    flex: 1 1 200px; /* Ajuste flexible: crece, encoge, tamaño base 200px */
+    box-sizing: border-box; /* Incluir relleno y borde en el tamaño total */
+        .producto img {
+            max-width: 100%; /* La imagen no excederá el tamaño del contenedor */
+            height: auto; /* Mantener proporciones */
+            display: block; /* Eliminar espacio extra debajo de la imagen */
+        }
+    }
+}
+
+footer {
+    background-color: #2196F3; /* Azul */
+    color: #FFFFFF; /* Texto blanco */
+    padding: 0px;
+
+    img{
+        width: 10vh; /* Ajusto el logo porcentaje ancho view port*/
+        height: auto; /* Mantengo proporción imagen */
+    }
+    ul{
+        list-style: none;
+        a{
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+    }
+    address{
+        font-size: .8rem;
+    }
+
+   .fa-whatsapp{
+        color: #25d366;
+        background-color: #FFFFFF;
+        border-radius: 50%; /* Hacer el fondo circular */
+        padding: 0px; /* Añadir un poco de espacio alrededor del icono */
+        font-size: 60px;
+        display: inline-block; /* Mantener el tamaño adecuado del ícono */
+    }
+    .whatsapp {
+        color: green;
+        text-decoration: none;
+        
+    }
+    .whatsapp img {
+        width: 35px;
+        height: 35px;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+    }
+    .fa-facebook{
+        color: #4267B2;
+        background-color: #FFFFFF;
+        border-radius: 50%; /* Hacer el fondo circular */
+        padding: 0px; /* Añadir un poco de espacio alrededor del icono */
+        font-size: 60px;
+        display: inline-block; /* Mantener el tamaño adecuado del ícono */
+    }
+    .facebook {
+        color: blue;
+        text-decoration: none;
+    }
+    .facebook img {
+        width: 30px;
+        height: 30px;
+        background-color: #FFFFFF;
+        border-radius: 50%; /* Hacer el fondo circular */
+        padding: 1px; /* Añadir un poco de espacio alrededor del icono */
+    }
+    .x {
+        color: black; /* Define el color del texto */
+        text-decoration: none; /* Elimina el subrayado del enlace */
+    }
+    .x img {
+        width: 30px;
+        height: 30px;
+        fill: #000000;
+        background-color: #FFFFFF;
+        border-radius: 50%; /* Hacer el fondo circular */
+        padding: 1px; /* Añadir un poco de espacio alrededor del icono */
+
+
+    }
+    .fa-instagram{
+        background: linear-gradient(45deg, #FFDC80, #F56040, #C13584, #833AB4);
+        -webkit-background-clip: border-box;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 60px;
+        display: inline-block; /* Mantener el tamaño adecuado del ícono */
+    }
+    .instagram {
+        color: purple; /* Define el color del texto */
+        font-size: 14px; /* Tamaño del texto */
+        text-decoration: none; /* Elimina el subrayado del enlace */
+        flex-direction: column;
+        align-items: center; /* Centra el logo y el texto horizontalmente */
+    }
+    .instagram img {
+        width: 30px; /* Define el ancho del logo */
+        height: 30px; /* Define la altura del logo */
+        background-color: #FFFFFF; /* Fondo blanco */
+        border-radius: 50%; /* Redondea el fondo para adaptarlo a logos circulares */
+        padding: 2px; /* Añade relleno para ajustar el tamaño total a 30px */
+        box-sizing: border-box; /* Incluye el padding en el tamaño total */
+    }
+    .fa-linkedin{
+        color: #0A66C2;
+        background-color: #FFFFFF;
+        border-radius: 5%; /* Para esquinas redondeadas */
+        padding: 0px; /* Añadir un poco de espacio alrededor del icono */
+        font-size: 60px;
+        display: inline-block; /* Mantener el tamaño adecuado del ícono */
+    }
+    .linkedin {
+        color: #0077B5; /* Color oficial de LinkedIn */
+        text-decoration: none;
+    }
+    .linkedin img {
+        width: 30px;
+        height: 30px;
+        background-color: #FFFFFF;
+        border-radius: 50%; /* Hacer el fondo circular */
+        padding: 1px; /* Añadir un poco de espacio alrededor del icono */
+    }
+}

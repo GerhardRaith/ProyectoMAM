@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es-ar">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contacto | Asociación Mutual Alberto Magno de los Profesionales de la Salud</title>
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+        <script src="https://kit.fontawesome.com/8d93caaefa.js" crossorigin="anonymous"></script>
+        <meta http-equiv="Cache-Control" content="public, max-age=120"> <!-- Lo agregué  x adv inspecion http-cache -->
+        <meta http-equiv="Expires" content="120">
+        <script src="../js/script.js" defer></script><!-- Enlace archivo JavaScript carpeta 'js', con defer para que se cargue después del HTML -->
+        <link rel="stylesheet" href="../css/estilos.css">
+    </head>
+    <body>
+        <header>
+            <a href="index.html">
+                <img src="../assets/img/LogoMAM02-840x525.jpg" alt="Logotio de la Mutual Alberto Magno de los Profesionales de la Salud, un corazón d ecolor rojo que simboliza la vida, que lo tapa una mano blanca que simboliza el cuidado de la salud, junto a una pequeña cruz en color azul que simboliza los profesionales de la medicina al servicio de la salud de las personas" width="200">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="../index.html#nosotros">Nosotros</a></li>
+                    <li><a href="../index.html#vision">Visión</a></li>
+                    <li><a href="../index.html#mision">Misión</a></li>
+                    <li><a href="../index.html#principios">Principios</a></li>
+                    <li><a href="../index.htmlvalores">Valores</a></li>
+                    <li><a href="./productos.html">Productos</a></li>
+                    <li><a href="./contacto.html" >Contacto</a></li>
+                    <li><a href="./carrito.html"> Carrito</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <main>
+            <h1>Contacto:</h1>
+            <h2>Formulario:</h2>
+            <h3>Complete el formulario:</h3>
+            <form action="https://formspree.io/f/movqqepl" method="post">
+                <div>
+                    <label for="nombre">Nombre:
+                        <input type="text" placeholder="Ingrese su/s Nombre/s completo/s" required name="nombre" id="nombre" minlength="3" maxlength="20">
+                    </label>
+                </div>
+                <div>
+                    <label for="apellido">Apellido:
+                        <input type="text" placeholder="Ingrese su/s Apellido/s completo/s" required name="apellido" id="apellido" minlength="3" maxlength="20">
+                    </label>
+                </div>
+                <div>
+                    <label for="dni">DNI:
+                        <input type="number" placeholder="Ingrese su Nº de documento" required name="dni" id="dni" minlength="8" maxlength="8">
+                    </label>
+                </div>
+                <div>
+                    <label for="edad">Edad:
+                        <input type="range" placeholder="Selecione su Edad" required name="edad" id="edad" min="18" max="100" oninput="mostrarValor(this.value)">
+                        <span id="valorEdad">50</span>
+                    </label>
+                </div>
+                <div>
+                    <label for="telefono">Teléfono:
+                        <input type="tel" name="telefono" id="telefono" required placeholder="Ingrese su Nº de teléfono antepondiendo el código de área">
+                    </label>
+                </div>
+                <div>
+                    <label for="email">e-mail:
+                        <input type="email" placeholder="Ingrese su correo electrónico de contacto" required name="email" id="email">
+                    </label>
+                </div>
+                <div>
+                    <label for="provincia">Ingrese la provincia de residencia: 
+                        <select name="provincia" id="provincia">
+                            <option value="1">Buenos Aires</option>
+                            <option value="2" selected>CABA</option>
+                            <option value="3">Catamarca</option>
+                            <option value="4">Chaco</option>
+                            <option value="5">Chubut</option>
+                            <option value="6">Córdoba</option>
+                            <option value="7">Corrientes</option>
+                            <option value="8">Entre Ríos</option>
+                            <option value="9">Formosa</option>
+                            <option value="10">Jujuy</option>
+                            <option value="11">La Pampa</option>
+                            <option value="12">La Rioja</option>
+                            <option value="13">Mendoza</option>
+                            <option value="14">Misiones</option>
+                            <option value="15">Neuquén</option>
+                            <option value="16">Río Negro</option>
+                            <option value="17">Salta</option>
+                            <option value="18">San Juan</option>
+                            <option value="19">San Luis</option>
+                            <option value="20">Santa Cruz</option>
+                            <option value="21">Santa Fe</option>
+                            <option value="22">Santiago del Estero</option>
+                            <option value="23">Tierra del Fuego, Antártida e Isla del Atláncio Sur</option>
+                            <option value="24">Tucumán</option>
+                        </select>
+                    </label>
+                </div>
+                <div>
+                    <label for="password">Pasword:
+                        <input type="password" placeholder="Ingrese un pasword entre un mínimo de 8 y un máximo de 16 caracteres" required name="password" id="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^a-zA-Z\d])(?!(?:.*(\d)\1\1)).{8,16}$"
+                        title="Debe contener al menos una letra mayúscula, una letra minúscula, un número no correlativo y un carácter especial. Mínimo 8 y máximo 16 caracteres."
+                        maxlength="16" 
+                        aria-required="true">
+                    </label>
+                </div>
+
+                <div>
+                    <h4>Elegí sobre qué producto deseas obtener más información:</h4>
+                    <label for="nectarg">
+                        <input type="radio" name="producto" id="nectarg" value="Néctar G">
+                        Néctar G
+                    </label>
+                    <label for="nectarenergy">
+                        <input type="radio" name="producto" id="nectarenergy" value="Néctar Energy">
+                        Néctar Energy
+                    </label>
+                    <label for="nectarm">
+                        <input type="radio" name="producto" id="nectarm" value="Néctar M">
+                        Néctar M
+                    </label>
+                    <label for="calciorade">
+                        <input type="radio" name="producto" id="calciorade" value="Calcio Rade">
+                        Calcio Rade
+                    </label>
+                </div>
+
+                <div>
+                    <h4 for="">Indique que productos consume habitualmente:</h4>
+                        <label for="nectarg">
+                            <input type="checkbox" name="productos" id="nectarg" value="Néctar G">
+                            Néctar G
+                        </label>
+                        <input type="checkbox" name="productos" id="nectarenergy" value="Néctar Energy">
+                        <label for="nectarenergy">Néctar Energy</label>
+                        <input type="checkbox" name="productos" id="nectarm" value="Néctar M">
+                        <label for="nectarm">Néctar M</label>
+                        <input type="checkbox" name="productos" id="calciorade" value="Calcio Rade">
+                        <label for="calciorade">Calcio Rade</label>
+                </div>
+
+                <div>
+                    <label for="mensaje">Escriba su mensaje:</label>
+                    <textarea name="mensaje" id="mensaje" rows="5" cols="50" maxlength="250" placeholder="Ingrese hasta un máximo 250 caracteres"></textarea>
+                </div>
+
+                <div>
+                    <label for="terminos"> 
+                        <input type="checkbox" name="terminos" id="terminos" required>
+                        Aceptar los términos y condiciones:
+                    </label>
+                </div>
+
+                <div>
+                    <input type="reset" value="Borrar Formulario">
+                    <input type="submit" value="Enviar Formulario">
+                </div>
+            </form>
+            <section>
+                <h2 id="direccion">¿Dónde estamos?</h2>
+                <iframe id="myIframe" title="Dónde Estamos" width="600" height="450" allowfullscreen=""></iframe> 
+                <script>
+                    function isCompatibleBrowser() {
+                        var ua = navigator.userAgent;
+                        var isFirefox = ua.indexOf("Firefox") > -1;
+                        var isSafari = ua.indexOf("Safari") > -1 && ua.indexOf("Chrome") === -1;
+                        var firefoxVersion = parseInt(ua.split("Firefox/")[1]);
+                        var safariVersion = parseInt(ua.split("Version/")[1]);
+                        return (isFirefox && firefoxVersion >= 121) || (isSafari && safariVersion >= 16.4);
+                    }
+                    document.addEventListener("DOMContentLoaded", function() {
+                        var iframe = document.getElementById("myIframe");
+                        if (isCompatibleBrowser()) {
+                            iframe.setAttribute("loading", "lazy");
+                            iframe.setAttribute("referrerpolicy", "no-referrer-when-downgrade");
+                        } else {
+                            iframe.src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1952.344173251527!2d-58.42943573681405!3d-34.61835922058464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca5b27a80ca9%3A0x17ec04de04bb4ee3!2sVenezuela%204455%2C%20C1211ABI%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1727381334279!5m2!1ses-419!2sar";
+                        }
+                    });
+                </script>
+                <p>&#x231B; <strong>Horario de Atención:</strong> de lunes a viernes de <strong>08:00</strong> a <strong>20:00</strong> hs (de corrido) y sábados de <strong>09:00</strong> a <strong>13:00 hs</strong></p>
+            </section>
+
+            <section>
+                <h2>Trasporte Público:</h2>
+                <h3>Colectivos:</h3>
+                <p>2 5 8 15 26 65 84 85 103 119 132 181</p>
+                <h3>Subte:</h3>
+                <p>Línea A estación "Río de Janeiro <i>(lo deja a 4 cuadras)</i></p>
+                <h3>Tren:</h3>
+                <p> Línea SARMIENTO estación "Caballito" <i>(lo deja a 12 cuadras) </i></p>
+            </section>
+        </main>
+
+        <script>
+            function mostrarValor(valor) {
+                document.getElementById('valorEdad').textContent=valor;
+            }
+        </script>
+
+        <footer>
+            <a href="../index.html">
+                <img src="../assets/img/LogoCore600Circular.png" alt="Corazón con la mano y la cruz" class="alinear-derecha img-porcentual10">
+            </a>
+            <div>
+                <p>&#x1F583; <b>Dirección:</b> República Bolivariana de Venezuela 4455 - C1211ABI - Ciudad Autónoma de Buenos Aires - Argentina</p>
+                <p>&#x231B; <b>Horario de Atención:</b> de lunes a viernes de <b>08:00</b> a <b>20:00</b> hs <i>(de corrido)</i> y sábados de <b>09:00</b> a <b>13:00 hs</b></p>
+                <p>&#x1F4EC;: <a href="mailto:contacto@magno.org.ar">contacto@magno.org.ar</a></p>
+                <p>&#x1F57F;: (+54) 0800-999-1435
+                    (+54) 11 4983-0271
+                    (+54) 11 4958-2329
+                </p>
+            </div>
+            <div>
+                <a href="https://web.whatsapp.com/" alt="Vínculo para contactarnos por WhatsApp" title="Contactanos por WhatsApp" target="_blank" rel="noopener" class="alinear-derecha">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+            </div>
+            <div>
+                <a href="https://www.facebook.com/" alt="Vínculo para contactarnos por Facebook" title="Seguinos en Facebook" target="_blank" rel="noopener" class="alinear-derecha">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+            </div>
+            <div>
+                <a href="https://www.instagram.com/" alt="Vínculo para contactarnos por Instagram" title="Seguinos en Instagram" target="_blank" rel="noopener" class="alinear-derecha">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </div>
+            <div>
+                <a href="https://www.linkedin.com/" alt="Vínculo para contactarnos por Linkedin" title="Seguinos en Linkedin" target="_blank" rel="noopener" class="alinear-derecha">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+            </div>
+            <div>
+                <p>© 2024 Todos los derechos reservados - Asociación Mutual Alberto Magno de los Profesionales de la Salud</p>
+            </div>
+        </footer>
+    </body>
+</html>

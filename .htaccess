@@ -1,0 +1,33 @@
+# Redirecciones y escritura:
+# Forzar HTTPS: Aseguro de que todas las conexiones al sitio web se realicen a través de HTTPS.
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Encabezados de seguridad:
+Header set Content-Security-Policy: "default-src 'self';"
+Header set X-Frame-Options: "SAMEORIGIN"
+Header set X-XSS-Protection "1; mode=block"
+Header set X-Content-Type-Options: "nosniff"
+Header set Referrer-Policy: "no-referrer-when-downgrade"
+Header set Permissions-Policy: "geolocation=(self), microphone=()"
+Header set Content-Security-Policy: "default-src 'self'; script-src 'self' https://apis.google.com; style-src 'self' 'unsafe-inline';"
+Header set Strict-Transport-Security: "max-age=31536000; includeSubDomains"
+
+# Nuevos encabezados Cross-Origin:
+<IfModule mod_headers.c>
+    Header set Cross-Origin-Embedder-Policy: "require-corp"
+    Header set Cross-Origin-Opener-Policy: "same-origin"
+    Header set Cross-Origin-Resource-Policy: "same-origin"
+</IfModule>
+
+# Bloqueo accesos a archivos sensibles: Protege archivos como .htaccess, .htpasswd, .git, etc.
+<Files ~ "^\.ht">
+    Require all denied
+</Files>
+<Files ~ "^\.git">
+    Require all denied
+</Files>
+
+# Deshabilito el listado de directorios: Evita que los usuarios puedan ver el contenido de los directorios.
+Options -Indexes
