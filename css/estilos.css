@@ -33,7 +33,13 @@ h2{
     padding: 1rem;
 }
 
-header {
+body {
+    display: flex;
+    flex-direction: column; /* Organiza los hijos verticalmente */
+    min-height: 100vh; /* Asegura que el body ocupe al menos toda la altura de la ventana */
+}
+
+.header {
     background-color: #4CAF50; /* Verde */
     position: sticky; /* fijo el encabezado*/
     top: 0; /*lo posiciono desde arriba*/
@@ -79,7 +85,7 @@ header {
 main {
     background-color: #FFFFFF;
     color: #000000; /* Texto negro */
-    padding: 0px;
+    flex: 1; /* Permite que el main ocupe el espacio disponible */
     p{
         padding-top: 0.5rem;
         text-indent: 2em; /* Ajusta la cantidad de sangría */
@@ -104,33 +110,49 @@ main {
     height: 100vh;
     padding: 1rem;
     .contenedorTextSeccionMainIndex {
-        text-align: center;
-        width: 50%;
+        width: 50%; /*ocupo el 50% del ancho de la pantalla*/
+        padding: 2rem;
         border: 5px groove #000000;
         border-radius: 25px; /*redondeo el área*/
-        font-size: 18px;
+        margin: 0 auto;/*Doy margen sup e inf 0 y derecha izq auto (lo centra)*/
+        margin-top: 2rem ; /*Lo separo del h2*/
+        text-align: center; /*Alineo el texto del link*/
         /*propiedades blur y backdrop-blur*/
-       /* filter: blur(10px) brightness(0.5);*/
-       -webkit-backdrop-filter: blur(15px); /* Soporte para Safari */
-       backdrop-filter: blur(10px); /* Marco del área del contenedor*/
-       p{
-        font-size: 1.5em;
-        padding: 1rem;
-        margin-top: 10px;
-        margin-bottom: 10px;
+        /* filter: blur(10px) brightness(0.5);*/
+        -webkit-backdrop-filter: blur(10px); /* Soporte para Safari */
+        backdrop-filter: blur(10px); /* desenfoque del área del contenedor*/
+        p{
+            font-size: 1.8em;
         }
         a{
+            display:inline-block;
+            margin-top:30px; /*Aire desde párrafo de arriba*/
             text-decoration: none;
             color: #ff0000;
-            font-size: 1.5em;
+            font-size: 2.5em;
             font-weight: bold;
-            padding: .6rem;
-            border: 3px groove #000000;
-            border-radius: 10px;
+            border:4px groove #000000;
+            padding:1rem;
+            border-radius:10px;
+            background-color: #8d8989; /* Color de fondo gris claro */
+            box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.5); /*Desenfoques en px  sombra negra y brillo 505*/
         }
     }
 }
+/*Estilos sección principal Main .idndex #valores*/
+.valores{
+    img{
+        padding: 20px;
+        display: block;
+        margin: 0 auto; /* Esto centra la imagen horizontalmente */
+        border-radius: 50px;
+        width: 50vh;
+    }
+    
+}
 
+
+/*Estilos pagina productos.html*/
 .productos {
     display: flex; /* Activar Flexbox */
     flex-wrap: wrap; /* Permitir que los productos se envuelvan */
@@ -139,15 +161,27 @@ main {
 
     .producto {
     background-color: #2196F3; /* Fondo azul */
-    color: white; /* Color del texto */
+    color: #ffffff; /* Color del texto */
     padding: 20px; /* Relleno interno de cada producto */
     margin: 10px; /* Margen externo de cada producto */
+    border-radius: 30px;
     flex: 1 1 200px; /* Ajuste flexible: crece, encoge, tamaño base 200px */
     box-sizing: border-box; /* Incluir relleno y borde en el tamaño total */
-        .producto img {
-            max-width: 100%; /* La imagen no excederá el tamaño del contenedor */
-            height: auto; /* Mantener proporciones */
-            display: block; /* Eliminar espacio extra debajo de la imagen */
+    display: flex; /* Activar Flexbox en cada producto */
+    flex-direction: column; /* Apilar elementos verticalmente */
+    justify-content: center; /* Centrar elementos verticalmente */
+    img {
+        max-width: 100%; /* La imagen no excederá el tamaño del contenedor */
+        height: auto; /* Mantener proporciones */
+        border-radius: 20px;
+        display: block; /* Eliminar espacio extra debajo de la imagen */
+        margin: 0 auto; /* Esto centra la imagen horizontalmente */
+        }
+    h3 {
+        text-align: center; /* Centrar texto horizontalmente */
+        padding: 1rem;
+        margin-top: auto; /* Asegura que el h3 esté en el pie */
+        margin-bottom: 0; /* Opcional: Ajustar según sea necesario */
         }
     }
 }
@@ -155,12 +189,20 @@ main {
 footer {
     background-color: #2196F3; /* Azul */
     color: #FFFFFF; /* Texto blanco */
-    padding: 0px;
-
-    img{
-        width: 10vh; /* Ajusto el logo porcentaje ancho view port*/
-        height: auto; /* Mantengo proporción imagen */
+    padding: 20px;
+    bottom: 0; /*Lo posiciono desde abajo*/
+    display: flex;
+    align-items: center; /* centra verticalmente */
+    justify-content: space-between; /* Añade espacio entre los elementos para alinear la imagen a la derecha */
+    a{
+        display: flex;
+        align-items: center; /* Centra verticalmente */
+        img{
+            width: 10vh; /* Ajusto el logo porcentaje ancho view port*/
+            height: auto; /* Mantengo proporción imagen */
+        }
     }
+   
     ul{
         list-style: none;
         a{
@@ -266,5 +308,9 @@ footer {
         background-color: #FFFFFF;
         border-radius: 50%; /* Hacer el fondo circular */
         padding: 1px; /* Añadir un poco de espacio alrededor del icono */
+    }
+    section {
+        font-size: .8rem;
+        display: flex;
     }
 }
