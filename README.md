@@ -20,7 +20,7 @@ El proyecto está estructurado en las siguientes carpetas dentro de la carpeta P
 - `ifavicon.ico`: imagen favicon del logo
 - `.htaccess`: archivo de encabezados de seguridad para servidores (explorado por cuenta propia fuera del curso)
 - `-headers`: los mismos encabezados de seguridad anterior adaptados para sitio https://app.netlify.com/
-- `sitemap.xml`: mapa del sitio generado con Free Online Sitemap Generator www.xml-sitemaps.com (leyendo dice que es bueno tener un mapa del sitio)
+- `sitemap.xml`: mapa del sitio generado con Free Online Sitemap Generator www.xml-sitemaps.com (leyendo dice que es bueno tener un mapa del sitio) Dado que incluye hasta la clase 6 se actualizará al terminar, por ahora es un ejemplo
 - `mapasitio.xml`: ídem anterior, archivo creado dentro del proyecto (debo aprender cómo se deben colocar las rutas si relativas o cuando la web se encuentra alojada en el servidor)
 - `css/`: Contiene los archivos de estilos CSS.
   - `estilos.css`: Archivo principal de estilos.
@@ -40,8 +40,9 @@ El proyecto está estructurado en las siguientes carpetas dentro de la carpeta P
 
 ## Navegación:
 
-Para visualizar la web como se vería en tu navegador preferido accede al siguiente link:
+Para visualizar la web como se vería en tu navegador preferido accede a alguno de los siguientes link's:
 https://effulgent-belekoy-d83565.netlify.app/
+https://gerhardraith.github.io/ProyectoMAM/
 
 ## Instalación:
 
@@ -49,7 +50,7 @@ Para instalar y ejecutar el proyecto en tu máquina local, sigue estos pasos:
 
 1. Clona el repositorio:
     ```sh
-    git clone https://github.com/tuusuario/asociacion-mutual-alberto-magno.git (no está es ejemplo)
+    git clone https://github.com/GerhardRaith/ProyectoMAM.git (agregado 22/10/24)
     ```
 2. Navega al directorio del proyecto:
     ```sh
@@ -67,14 +68,14 @@ Las contribuciones al proyecto son bienvenidas. Por favor, abre un issue o reali
 
 ## Licencia:
 
-Este proyecto está licenciado bajo la Licencia ..... Consulta el archivo [LICENSE](LICENSE) para obtener más información.
+Este proyecto está licenciado bajo la Licencia ..... Consulta el archivo [LICENSE](LICENSE) para obtener más información. (es ejemplo para cuando comparte proyectos de dominio público el link no apunta a ningún lado)
 
 ## Contacto:
 
 Para cualquier consulta o comentario, puedes ponerte en contacto a través de:
-- Email: contacto@anmagno.org.ar
+- Email: contacto@amagno.org.ar
 - Teléfono: +54 11 1234 5678
 
 ---
 
-¡Gracias por visitar nuestra web!
+¡Gracias por visitar mi 1er proyecto!
