@@ -1,104 +1,92 @@
-/* @font-face {
-    font-family: 'merriweather_sansregular';
-    src: url('../assets/fonts/Merriweather_Sans/merriweathersans-woff/merriweathersans-variablefont_wght-webfont.woff2') format('woff2'),
-        url('../assets/fonts/Merriweather_Sans/merriweathersans-woff/merriweathersans-variablefont_wght-webfont.woff') format('woff');
-    font-style: normal;
-    font-weight: normal;
-}*/
 @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 *{
     font-family: "Merriweather Sans", sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    -webkit-user-select: none; /* compatibilidad safari*/
+    -webkit-user-select: none; /* Compatibilidad safari*/
     user-select: none; /* No se puede seleccionar el texto, respeta hipervinculos*/
-    p {
-        line-height: 1.5; /* Aumento interlineado párrafos */
-        text-align: justify;
-        padding: 0 1rem;
-    }
 }
-
+p {
+    line-height: 1.5; /* Aumento interlineado párrafos */
+    text-align: justify;
+    padding: 0 1rem;
+}
 h1{
     color: #1E90FF;
-    font-size: 3rem; /* ver tema unidades relativas */
+    font-size: 3rem; 
     text-align: center;
     padding: 1rem;
 }
 h2{
     color: #1E90FF;
-    font-size: 2rem; /* ver tema unidades relativas */
+    font-size: 2rem; 
     text-align: left;
-    padding: 1rem;
+    padding: .8rem;
 }
 
-body {
+/* ESTILOS HEADERS */
+header {
+    background-color: #4CAF50;
+    position: sticky; /* Fijo el encabezado* /
+    top: 0; /* Posiciono desde arriba */
+    z-index: 1; /* Para posicioname encima + (positivo)*/
+    padding: 1.5rem;
     display: flex;
-    flex-direction: column; /* Organiza los hijos verticalmente */
-    min-height: 100vh; /* Asegura que el body ocupe al menos toda la altura de la ventana */
-}
+    align-items: center; /* Centro vertical */
+    justify-content: space-between; /* Añado espacio (separa) entre el logo y la navegación */
+}    
+header nav ul {
+    list-style: none; /* Quito marcadores */
+    display: flex; /* Alineo elementos lista horizontalmente */
 
-.header {
-    background-color: #4CAF50; /* Verde */
-    position: sticky; /* fijo el encabezado*/
-    top: 0; /*lo posiciono desde arriba*/
-    z-index: 1; /*para posicionarse encima + (positivo)*/
-    padding: 20px;
+}
+header nav ul li {
+    padding-left: 1rem; /* Separo lista*/
+    font-size: 1.3rem;
+}
+header a{
+    color: #1405e7;
+    text-decoration: none;
     display: flex;
-    align-items: center; /* centra verticalmente */
-    justify-content: space-between; /* Añade espacio (separa) entre el logo y la navegación */
-    height: 20vh; /* Aseguro que el header tome el tamaño de su contenido */
-    nav ul {
-        list-style: none; /* quito marcadores*/
-        display: flex; /* Alineo elementos lista horizontalmente */
-        li {
-            padding-left: 1rem; /* separo la lsita*/
-            font-size: 1.3rem;
-        }
-    }
-    a{
-        color: #1405e7; /*#1405e7*/
-        text-decoration: none;
-        display: flex;
-        flex-direction: column; /* Alineo elementos verticalmente */
-        align-items: center;
-        img{
-            width: 10vh; /* Ajusto el logo porcentaje ancho view port*/
-            height: auto; /* Mantengo proporción imagen */
-        }
-        h1{
-            color: #1E90FF;
-            font-size: 1rem;
-            text-align: center;
-            padding: .25rem;
-        }
-        h2{
-            color: #ff0000;
-            font-size: .75rem;
-            text-align: center;
-            padding: 0;
-        }
-    }
+    flex-direction: column; /* Alineo elementos verticalmente */
+    align-items: center;
+}
+header a img {
+    width: 15vh; /* Ajusto el logo porcentaje ancho view port */
+    height: auto; /* Mantengo proporción imagen */
+}
+header a h1{
+    color: #1E90FF;
+    font-size: 1rem;
+    text-align: center;
+    padding: .25rem;
+}
+header a h2 {
+    color: #FF0000;
+    font-size: .75rem;
+    text-align: center;
+    padding: 0;
 }
 
+/* ESTILOS MAIN INDEX*/
 main {
     background-color: #FFFFFF;
-    color: #000000; /* Texto negro */
-    flex: 1; /* Permite que el main ocupe el espacio disponible */
-    p{
-        padding-top: 0.5rem;
-        text-indent: 2em; /* Ajusta la cantidad de sangría */
-    }
-    h2{
-        font-size: 1.5rem;
-        padding-top: 2.5rem;
-    }
-    ol {
-        margin-left: 1rem;
-        padding-left: 1rem; /* Alinea numeración lista con resto contenido  Main*/
-        padding-bottom: 1rem;
-    }
+    color: #000000;
+    /*flex: 1; /* Permito que el main ocupe el espacio disponible (lo coloque por la pagina de contacto que el main al no ocupar todo el footer queda arrina y se ve blanco debajo del mismo) */
+}
+main p {
+    padding-top: 0.5rem;
+    text-indent: 2em; /* Ajusta cantidad de sangría */
+}
+main h2 {
+    font-size: 1.5rem;
+    padding-top: 2.5rem;
+}
+main ol {
+    margin-left: 1rem;
+    padding-left: 1rem; /* Alinea numeración lista con resto contenido  Main*/
+    padding-bottom: 1rem;
 }
 
 /*Estilos sección principal Main .index*/
@@ -109,61 +97,83 @@ main {
     background-position: center center;
     height: 100vh;
     padding: 1rem;
-    .contenedorTextSeccionMainIndex {
-        width: 50%; /*ocupo el 50% del ancho de la pantalla*/
-        padding: 2rem;
-        border: 5px groove #000000;
-        border-radius: 25px; /*redondeo el área*/
-        margin: 0 auto;/*Doy margen sup e inf 0 y derecha izq auto (lo centra)*/
-        margin-top: 2rem ; /*Lo separo del h2*/
-        text-align: center; /*Alineo el texto del link*/
-        /*propiedades blur y backdrop-blur*/
-        /* filter: blur(10px) brightness(0.5);*/
-        -webkit-backdrop-filter: blur(10px); /* Soporte para Safari */
-        backdrop-filter: blur(10px); /* desenfoque del área del contenedor*/
-        p{
-            font-size: 1.8em;
-        }
-        a{
-            display:inline-block;
-            margin-top:30px; /*Aire desde párrafo de arriba*/
-            text-decoration: none;
-            color: #ff0000;
-            font-size: 2.5em;
-            font-weight: bold;
-            border:4px groove #000000;
-            padding:1rem;
-            border-radius:10px;
-            background-color: #8d8989; /* Color de fondo gris claro */
-            box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.5); /*Desenfoques en px  sombra negra y brillo 505*/
-        }
-    }
 }
-/*Estilos sección principal Main .idndex #valores*/
-.valores{
-    img{
-        padding: 20px;
-        display: block;
-        margin: 0 auto; /* Esto centra la imagen horizontalmente */
-        border-radius: 50px;
-        width: 50vh;
-    }
-    
+.contenedorTextSeccionMainIndex {
+    width: 50%; /*ocupo el 50% del ancho de la pantalla*/
+    padding: 2rem;
+    border: 5px groove #000000;
+    border-radius: 25px; /*redondeo el área*/
+    margin: 0 auto;/*Doy margen sup e inf 0 y derecha izq auto (lo centra)*/
+    margin-top: 2rem ; /*Lo separo del h2*/
+    text-align: center; /*Alineo el texto del link*/
+    /*propiedades blur y backdrop-blur*/
+    /* filter: blur(10px) brightness(0.5);*/
+    -webkit-backdrop-filter: blur(10px); /* Soporte para Safari */
+    backdrop-filter: blur(10px); /* desenfoque del área del contenedor*/
+}
+.contenedorTextSeccionMainIndex p {
+    font-size: 1.8em;
+}
+.contenedorTextSeccionMainIndex a {
+    display:inline-block;
+    margin-top:30px; /*Aire desde párrafo de arriba*/
+    text-decoration: none;
+    color: #FF0000;
+    font-size: 2.5em;
+    font-weight: bold;
+    border:4px groove #000000;
+    padding:1rem;
+    border-radius:10px;
+    background-color: #8d8989; /* Color de fondo gris claro */
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.5); /*Desenfoques en px  sombra negra y brillo 505*/
 }
 
+
+/*Estilos sección principal Main .index #valores*/
+.valores{
+    text-align: center;
+
+    img{
+        border-radius: 50px;
+        width: 15%;
+    }
+    .elemento {
+        background-color: #757575; /* Color fondo */
+        color: white; /* Color texto */
+        padding: 20px;
+        border-radius: 10px; /* Bordes redondeados */
+        box-sizing: border-box; /* Incluye relleno y borde en el tamaño total */
+    }
+}
+.valoresgrid{
+    display: grid;
+    grid-template-columns: 15% auto 20%; /* Tres columnas iguales repeat(3, 1fr)*/
+    grid-template-rows: 100px auto 100px;/* Tres filas automáticas repeat(3, auto)*/
+    gap: 10px; /* Espacio entre los elementos */
+    grid-template-areas: 
+        "val1 imag val2"
+        "val3 imag val4"
+        "val5 val5 val5";
+}
+.val1 {grid-area: val1;}
+.val2 {grid-area: val2;}
+.val3 {grid-area: val3;}
+.val4 {grid-area: val4;}
+.imag {grid-area: imag;}
+.val5 {grid-area: val5;}
 
 /*Estilos pagina productos.html*/
 .productos {
     display: flex; /* Activar Flexbox */
     flex-wrap: wrap; /* Permitir que los productos se envuelvan */
     justify-content: center; /* Distribuir los productos con espacio entre ellos */
-    padding: 20px; /* Relleno interno */
+    padding: 1.5rem; /* Relleno interno */
 
     .producto {
     background-color: #2196F3; /* Fondo azul */
-    color: #ffffff; /* Color del texto */
-    padding: 20px; /* Relleno interno de cada producto */
-    margin: 10px; /* Margen externo de cada producto */
+    color: #FFFFFF; /* Color del texto */
+    padding: 1.5rem; /* Relleno interno de cada producto */
+    margin: .8rem; /* Margen externo de cada producto */
     border-radius: 30px;
     flex: 1 1 200px; /* Ajuste flexible: crece, encoge, tamaño base 200px */
     box-sizing: border-box; /* Incluir relleno y borde en el tamaño total */
@@ -174,31 +184,32 @@ main {
         max-width: 100%; /* La imagen no excederá el tamaño del contenedor */
         height: auto; /* Mantener proporciones */
         border-radius: 20px;
-        display: block; /* Eliminar espacio extra debajo de la imagen */
+        /*display: block; /* Eliminar espacio extra debajo de la imagen */
         margin: 0 auto; /* Esto centra la imagen horizontalmente */
         }
     h3 {
         text-align: center; /* Centrar texto horizontalmente */
         padding: 1rem;
-        margin-top: auto; /* Asegura que el h3 esté en el pie */
-        margin-bottom: 0; /* Opcional: Ajustar según sea necesario */
+        margin-top: auto; /* Asegura h3 ce centre en el pie del box azul */
         }
     }
 }
 
+/* ETILOS FOOTERS */
 footer {
-    background-color: #2196F3; /* Azul */
+    background-color: #2196F3;
     color: #FFFFFF; /* Texto blanco */
-    padding: 20px;
+    padding: 1.5rem;
     bottom: 0; /*Lo posiciono desde abajo*/
     display: flex;
-    align-items: center; /* centra verticalmente */
-    justify-content: space-between; /* Añade espacio entre los elementos para alinear la imagen a la derecha */
+    flex-direction: column; /* Organizo hijos en columna*/
+    align-items: center; /* Centro elementos horizontalmente */
+    justify-content: space-between; /* Añado espacio entre los elementos para alinear la imagen a la derecha */
     a{
         display: flex;
         align-items: center; /* Centra verticalmente */
         img{
-            width: 10vh; /* Ajusto el logo porcentaje ancho view port*/
+            width: 15vh; /* Ajusto logo a porcentaje ancho view port*/
             height: auto; /* Mantengo proporción imagen */
         }
     }
@@ -210,8 +221,30 @@ footer {
             text-decoration: none;
         }
     }
-    address{
-        font-size: .8rem;
+    .pie{
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /* Distribuyo contenido en todo el espacio horizontal */
+        width: 100%; /* Aseguro ocupar todo el ancho de la pantalla con el contenedor*/
+        box-sizing: border-box; /* Incluyo padding y border en tamaño total */
+        .seguinos{
+            display: flex;
+            flex-direction:column;
+            ul{
+                display: flex;
+                gap: 1rem; /* Espacio entre íconos */
+            }
+            h3{
+                margin-bottom: 1rem; /* Opcional: Ajustar según sea necesario */
+            }
+        }
+        .legales{
+            display: flex;
+            flex-direction:column;
+            ul{
+                text-indent: 5em; /* Ajusta cantidad de sangría */
+            }
+        }
     }
 
    .fa-whatsapp{
@@ -222,18 +255,30 @@ footer {
         font-size: 60px;
         display: inline-block; /* Mantener el tamaño adecuado del ícono */
     }
-    .whatsapp {
-        color: green;
-        text-decoration: none;
-        
+    .whatsapp {  
+        img {
+            width: 2rem;
+            height: 2rem;
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+        }
     }
-    .whatsapp img {
-        width: 35px;
-        height: 35px;
+    .irarriba{
+        color: #FFFFFF;
+        font-size: 1rem;
+        background-color: #2196F3;
+        padding: .5rem;
+        width: 2rem;
+        border-radius: 25%;
         position: fixed;
-        bottom: 20px;
-        right: 20px;
+        bottom: 4rem;
+        right: 1.5rem;
+        display: flex; /* Centro contenido*/
+        align-items: center; /* Centra el contenido verticalmente */
+        justify-content: center; /* Centra el contenido horizontalmente */
     }
+
     .fa-facebook{
         color: #4267B2;
         background-color: #FFFFFF;
@@ -244,29 +289,28 @@ footer {
     }
     .facebook {
         color: blue;
-        text-decoration: none;
+        img {
+            width: 1.8rem;
+            height: 1.8rem;
+            background-color: #FFFFFF;
+            border-radius: 50%; /* Hacer el fondo circular */
+            padding: .1rem; /* Añadir un poco de espacio alrededor del icono */
+            box-sizing: border-box; /* Incluyo padding en tamaño total */
+        }
     }
-    .facebook img {
-        width: 30px;
-        height: 30px;
-        background-color: #FFFFFF;
-        border-radius: 50%; /* Hacer el fondo circular */
-        padding: 1px; /* Añadir un poco de espacio alrededor del icono */
-    }
+
     .x {
-        color: black; /* Define el color del texto */
-        text-decoration: none; /* Elimina el subrayado del enlace */
+        color: black; /* Defino color del texto */
+        img {
+            width: 1.8rem;
+            height: 1.8rem;
+            background-color: #FFFFFF;
+            border-radius: 50%; /* Hacer fondo circular */
+            padding: .1rem; /* Añado un poco de espacio alrededor del icono */
+            box-sizing: border-box; /* Incluyo padding en tamaño total */
+        }
     }
-    .x img {
-        width: 30px;
-        height: 30px;
-        fill: #000000;
-        background-color: #FFFFFF;
-        border-radius: 50%; /* Hacer el fondo circular */
-        padding: 1px; /* Añadir un poco de espacio alrededor del icono */
 
-
-    }
     .fa-instagram{
         background: linear-gradient(45deg, #FFDC80, #F56040, #C13584, #833AB4);
         -webkit-background-clip: border-box;
@@ -276,20 +320,16 @@ footer {
         display: inline-block; /* Mantener el tamaño adecuado del ícono */
     }
     .instagram {
-        color: purple; /* Define el color del texto */
-        font-size: 14px; /* Tamaño del texto */
-        text-decoration: none; /* Elimina el subrayado del enlace */
-        flex-direction: column;
-        align-items: center; /* Centra el logo y el texto horizontalmente */
+        img {
+            width: 1.8rem; /* Defino ancho del logo */
+            height: 1.8rem; /* Defino altura del logo */
+            background-color: #FFFFFF; /* Fondo blanco */
+            border-radius: 50%; /* Redondeo fondo para adaptarlo a logos circulares */
+            padding: .1rem; /* Añado un poco de espacio alrededor del icono */
+            box-sizing: border-box; /* Incluyo padding en tamaño total */
+        }
     }
-    .instagram img {
-        width: 30px; /* Define el ancho del logo */
-        height: 30px; /* Define la altura del logo */
-        background-color: #FFFFFF; /* Fondo blanco */
-        border-radius: 50%; /* Redondea el fondo para adaptarlo a logos circulares */
-        padding: 2px; /* Añade relleno para ajustar el tamaño total a 30px */
-        box-sizing: border-box; /* Incluye el padding en el tamaño total */
-    }
+
     .fa-linkedin{
         color: #0A66C2;
         background-color: #FFFFFF;
@@ -299,18 +339,25 @@ footer {
         display: inline-block; /* Mantener el tamaño adecuado del ícono */
     }
     .linkedin {
-        color: #0077B5; /* Color oficial de LinkedIn */
-        text-decoration: none;
+        img {
+            width: 30px;
+            height: 30px;
+            background-color: #FFFFFF;
+            border-radius: 50%; /* Hago fondo circular */
+            padding: 1px; /* Añado un poco de espacio alrededor del icono */
+        }
     }
-    .linkedin img {
-        width: 30px;
-        height: 30px;
-        background-color: #FFFFFF;
-        border-radius: 50%; /* Hacer el fondo circular */
-        padding: 1px; /* Añadir un poco de espacio alrededor del icono */
-    }
-    section {
+    address{
         font-size: .8rem;
-        display: flex;
+        margin-top: 1rem;
+        a{
+            text-decoration: none; /* Elimina subrayado */
+            color: inherit; /* Mantengo color enlace igual texto circundante */
+        }
+    }
+    .copyright{
+        text-align: center;
+        margin-top: .8rem;
+        font-size: .7rem;
     }
 }
