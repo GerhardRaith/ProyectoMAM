@@ -3,22 +3,23 @@
     font-family: "Merriweather Sans", sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /*(padding y margen se incluyen en los totales)*/
     -webkit-user-select: none; /* Compatibilidad safari*/
     user-select: none; /* No se puede seleccionar el texto, respeta hipervinculos*/
 }
+
 p {
     line-height: 1.5; /* Aumento interlineado párrafos */
     text-align: justify;
     padding: 0 1rem;
 }
-h1{
+h1 {
     color: #1E90FF;
     font-size: 3rem; 
     text-align: center;
     padding: 1rem;
 }
-h2{
+h2 {
     color: #1E90FF;
     font-size: 2rem; 
     text-align: left;
@@ -28,169 +29,198 @@ h2{
 /* ESTILOS HEADERS */
 header {
     background-color: #4CAF50;
-    position: sticky; /* Fijo el encabezado* /
+    position: sticky; /* Fijo el encabezado */
     top: 0; /* Posiciono desde arriba */
     z-index: 1; /* Para posicioname encima + (positivo)*/
     padding: 1.5rem;
     display: flex;
-    align-items: center; /* Centro vertical */
-    justify-content: space-between; /* Añado espacio (separa) entre el logo y la navegación */
+    align-items: center; /* Eje Transversdal => Centro vertical */
+    justify-content: space-between; /* Separo con el mayor espacio entre los contenedores (ancla y naveg)*/
+    a {
+        color: #1405E7;
+        text-decoration: none;
+        display: flex;
+        flex-direction: column; /* Alineo elementos verticalmente */
+        align-items: center;
+        img {
+            width: 15vh; /* Ajusto el logo porcentaje ancho view port */
+            height: auto; /* Mantengo proporción imagen */
+        }
+        h1 {
+            color: #1E90FF;
+            font-size: 1rem;
+            text-align: center;
+            padding: .25rem;
+        }
+        h2 {
+            color: #FF0000;
+            font-size: .75rem;
+            text-align: center;
+            padding: 0;
+        }
+    }
+    ul {
+        list-style: none; /* Quito marcadores */
+        display: flex; /* Alineo elementos lista horizontalmente */
+        li {
+            padding-left: 1rem; /* Separo lista*/
+            font-size: 1.3rem;
+        }
+    }
 }    
-header nav ul {
-    list-style: none; /* Quito marcadores */
-    display: flex; /* Alineo elementos lista horizontalmente */
-
-}
-header nav ul li {
-    padding-left: 1rem; /* Separo lista*/
-    font-size: 1.3rem;
-}
-header a{
-    color: #1405e7;
-    text-decoration: none;
-    display: flex;
-    flex-direction: column; /* Alineo elementos verticalmente */
-    align-items: center;
-}
-header a img {
-    width: 15vh; /* Ajusto el logo porcentaje ancho view port */
-    height: auto; /* Mantengo proporción imagen */
-}
-header a h1{
-    color: #1E90FF;
-    font-size: 1rem;
-    text-align: center;
-    padding: .25rem;
-}
-header a h2 {
-    color: #FF0000;
-    font-size: .75rem;
-    text-align: center;
-    padding: 0;
-}
 
 /* ESTILOS MAIN INDEX*/
 main {
     background-color: #FFFFFF;
     color: #000000;
-    /*flex: 1; /* Permito que el main ocupe el espacio disponible (lo coloque por la pagina de contacto que el main al no ocupar todo el footer queda arrina y se ve blanco debajo del mismo) */
-}
-main p {
-    padding-top: 0.5rem;
-    text-indent: 2em; /* Ajusta cantidad de sangría */
-}
-main h2 {
-    font-size: 1.5rem;
-    padding-top: 2.5rem;
-}
-main ol {
-    margin-left: 1rem;
-    padding-left: 1rem; /* Alinea numeración lista con resto contenido  Main*/
-    padding-bottom: 1rem;
-}
-
-/*Estilos sección principal Main .index*/
-.prodNaturales {
-    background-image: url(../assets/img/FondoMAM.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    height: 100vh;
-    padding: 1rem;
-}
-.contenedorTextSeccionMainIndex {
-    width: 50%; /*ocupo el 50% del ancho de la pantalla*/
-    padding: 2rem;
-    border: 5px groove #000000;
-    border-radius: 25px; /*redondeo el área*/
-    margin: 0 auto;/*Doy margen sup e inf 0 y derecha izq auto (lo centra)*/
-    margin-top: 2rem ; /*Lo separo del h2*/
-    text-align: center; /*Alineo el texto del link*/
-    /*propiedades blur y backdrop-blur*/
-    /* filter: blur(10px) brightness(0.5);*/
-    -webkit-backdrop-filter: blur(10px); /* Soporte para Safari */
-    backdrop-filter: blur(10px); /* desenfoque del área del contenedor*/
-}
-.contenedorTextSeccionMainIndex p {
-    font-size: 1.8em;
-}
-.contenedorTextSeccionMainIndex a {
-    display:inline-block;
-    margin-top:30px; /*Aire desde párrafo de arriba*/
-    text-decoration: none;
-    color: #FF0000;
-    font-size: 2.5em;
-    font-weight: bold;
-    border:4px groove #000000;
-    padding:1rem;
-    border-radius:10px;
-    background-color: #8d8989; /* Color de fondo gris claro */
-    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.5); /*Desenfoques en px  sombra negra y brillo 505*/
-}
-
-
-/*Estilos sección principal Main .index #valores*/
-.valores{
-    text-align: center;
-
-    img{
-        border-radius: 50px;
-        width: 15%;
+    /*flex: 1; /* Permito que el main ocupe el espacio disponible (lo coloque por la pagina de carrito que el main al no ocupar todo el footer queda arriba y se ve blanco debajo del mismo) */
+    p {
+        padding-top: 0.5rem;
+        text-indent: 2em; /* Ajusta cantidad de sangría */
     }
-    .elemento {
-        background-color: #757575; /* Color fondo */
-        color: white; /* Color texto */
-        padding: 20px;
-        border-radius: 10px; /* Bordes redondeados */
-        box-sizing: border-box; /* Incluye relleno y borde en el tamaño total */
+    h2 {
+        font-size: 1.5rem;
+        padding-top: 2.5rem;
     }
-}
-.valoresgrid{
-    display: grid;
-    grid-template-columns: 15% auto 20%; /* Tres columnas iguales repeat(3, 1fr)*/
-    grid-template-rows: 100px auto 100px;/* Tres filas automáticas repeat(3, auto)*/
-    gap: 10px; /* Espacio entre los elementos */
-    grid-template-areas: 
-        "val1 imag val2"
-        "val3 imag val4"
-        "val5 val5 val5";
-}
-.val1 {grid-area: val1;}
-.val2 {grid-area: val2;}
-.val3 {grid-area: val3;}
-.val4 {grid-area: val4;}
-.imag {grid-area: imag;}
-.val5 {grid-area: val5;}
-
-/*Estilos pagina productos.html*/
-.productos {
-    display: flex; /* Activar Flexbox */
-    flex-wrap: wrap; /* Permitir que los productos se envuelvan */
-    justify-content: center; /* Distribuir los productos con espacio entre ellos */
-    padding: 1.5rem; /* Relleno interno */
-
-    .producto {
-    background-color: #2196F3; /* Fondo azul */
-    color: #FFFFFF; /* Color del texto */
-    padding: 1.5rem; /* Relleno interno de cada producto */
-    margin: .8rem; /* Margen externo de cada producto */
-    border-radius: 30px;
-    flex: 1 1 200px; /* Ajuste flexible: crece, encoge, tamaño base 200px */
-    box-sizing: border-box; /* Incluir relleno y borde en el tamaño total */
-    display: flex; /* Activar Flexbox en cada producto */
-    flex-direction: column; /* Apilar elementos verticalmente */
-    justify-content: center; /* Centrar elementos verticalmente */
-    img {
-        max-width: 100%; /* La imagen no excederá el tamaño del contenedor */
-        height: auto; /* Mantener proporciones */
-        border-radius: 20px;
-        /*display: block; /* Eliminar espacio extra debajo de la imagen */
-        margin: 0 auto; /* Esto centra la imagen horizontalmente */
-        }
-    h3 {
-        text-align: center; /* Centrar texto horizontalmente */
+    ol {
+        margin-left: 1rem;
+        padding-left: 1rem; /* Alinea numeración lista con resto contenido  Main*/
+        padding-bottom: 1rem;
+    }
+    .prodNaturales {
+        background-image: url(../assets/img/FondoMAM.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        height: 100vh;
         padding: 1rem;
-        margin-top: auto; /* Asegura h3 ce centre en el pie del box azul */
+    }
+    /* Estilos sección principal Main .index */
+    .contenedorTextSeccionMainIndex {
+        width: 50%; /* ocupo el 50% del ancho de la pantalla */
+        padding: 2rem;
+        border: 5px groove #000000;
+        border-radius: 25px; /* redondeo el área */
+        margin: 0 auto;/* Doy margen sup e inf 0 y der e izq auto (lo centra) */
+        margin-top: 2rem ; /* Lo separo del h2 */
+        text-align: center; /* Alineo el texto del link */
+        -webkit-backdrop-filter: blur(10px); /* Soporte para Safari */
+        backdrop-filter: blur(10px); /* desenfoque del área del contenedor */
+        p {
+            font-size: 1.8em;
+        }
+        a {
+            display:inline-block;
+            margin-top:30px; /* Aire desde párrafo de arriba */
+            text-decoration: none;
+            color: #FF0000;
+            font-size: 2.5em;
+            font-weight: bold;
+            border:4px groove #000000;
+            padding:1rem;
+            border-radius:10px;
+            background-color: #8d8989; 
+            box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.5); /* Desenfoques en px  sombra negra y brillo .05 */
+        }
+    }
+    /* Estilos sección principal Main .index #valores */
+    
+}
+
+.GridPrincipiosValores {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas iguales */
+    grid-template-rows: repeat(3, auto);/* Tres filas automáticas */
+    grid-template-areas:
+    "val1 val5 val3"
+    "val2 val5 val4"
+    "val6 val6 val6";
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 1rem;
+  
+    .val1 {
+        grid-area: val1;
+    }
+    .val2 {
+        grid-area: val2;
+    }
+    .val3 {
+        grid-area: val3;
+    }
+    .val4 {
+        grid-area: val4;
+    }
+    .val5 {
+        grid-area: val5;
+        img{
+            border-radius: 3rem;
+            width: 100%;
+        }
+    }
+    .val6 {
+        grid-area: val6;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+    .val1, .val2, .val3, .val4, .val6 {
+        background-color: #757575;
+        color: #FFFFFF;
+        border-radius: 2rem;
+        padding-bottom: 16px;
+        h3 {
+            padding-top: 16px;
+            padding-left: 16px;
+        }
+        p {
+            padding-top: 16px;
+        }
+    }
+}
+
+/* PAGINA productos.html */
+.productos {
+    div h3 {
+        color:#FFFFFF;
+        text-align: center;
+        margin-top: .8rem;
+    }
+    div p {
+        color:#FFFFFF;
+        text-indent: 0; /* Elimino lo grl */
+        padding: 0; /* Elimino lo grl */
+        margin-top: .8rem;
+    }
+    div a {
+        color: #FFFFFF;
+        text-decoration: none;
+    }
+    display: flex; /* Activar Flexbox */
+    flex-direction: row;
+    flex-wrap: wrap; /* Permito productos pasen siguiente línea */
+    /*justify-content: space-between; /* Distribuir los productos con espacio entre ellos (Eje principal) */
+    align-items: stretch; /* Estiro para ocupar todo el espcio vertical */
+    padding: 1.5rem;
+    .producto {
+        background-color: #2196F3;
+        padding: 1rem; /* Relleno interno cada producto */
+        border-radius: 1.4rem;
+        flex: 1 1 200px; /* Ajuste flexible: crece, encoge, tamaño base 200px */
+        margin: 1rem; /* Margen externo cada producto */
+        box-sizing: border-box; /* Incluyo relleno y borde en tamaño total */
+        display: flex; /* Activar Flexbox en cada producto */
+        flex-direction: column; /* Apilar elementos verticalmente */
+        justify-content: space-between; /* Distribuyo elementos verticalmente */
+        img{
+            max-width: 75%; /* La imagen no excederá el tamaño del contenedor en % */
+            height: auto; /* Mantengo proporciones img*/
+            border-radius: 1rem;
+            margin: 0 auto; /* Centro imagen horizontalmente (al activar antes en producto el flex direction column) */
+        }
+        a {
+            text-align: right;
+            margin-top: .8rem;
         }
     }
 }
@@ -213,7 +243,6 @@ footer {
             height: auto; /* Mantengo proporción imagen */
         }
     }
-   
     ul{
         list-style: none;
         a{
@@ -246,15 +275,6 @@ footer {
             }
         }
     }
-
-   .fa-whatsapp{
-        color: #25d366;
-        background-color: #FFFFFF;
-        border-radius: 50%; /* Hacer el fondo circular */
-        padding: 0px; /* Añadir un poco de espacio alrededor del icono */
-        font-size: 60px;
-        display: inline-block; /* Mantener el tamaño adecuado del ícono */
-    }
     .whatsapp {  
         img {
             width: 2rem;
@@ -278,15 +298,6 @@ footer {
         align-items: center; /* Centra el contenido verticalmente */
         justify-content: center; /* Centra el contenido horizontalmente */
     }
-
-    .fa-facebook{
-        color: #4267B2;
-        background-color: #FFFFFF;
-        border-radius: 50%; /* Hacer el fondo circular */
-        padding: 0px; /* Añadir un poco de espacio alrededor del icono */
-        font-size: 60px;
-        display: inline-block; /* Mantener el tamaño adecuado del ícono */
-    }
     .facebook {
         color: blue;
         img {
@@ -298,7 +309,6 @@ footer {
             box-sizing: border-box; /* Incluyo padding en tamaño total */
         }
     }
-
     .x {
         color: black; /* Defino color del texto */
         img {
@@ -310,15 +320,6 @@ footer {
             box-sizing: border-box; /* Incluyo padding en tamaño total */
         }
     }
-
-    .fa-instagram{
-        background: linear-gradient(45deg, #FFDC80, #F56040, #C13584, #833AB4);
-        -webkit-background-clip: border-box;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-size: 60px;
-        display: inline-block; /* Mantener el tamaño adecuado del ícono */
-    }
     .instagram {
         img {
             width: 1.8rem; /* Defino ancho del logo */
@@ -328,15 +329,6 @@ footer {
             padding: .1rem; /* Añado un poco de espacio alrededor del icono */
             box-sizing: border-box; /* Incluyo padding en tamaño total */
         }
-    }
-
-    .fa-linkedin{
-        color: #0A66C2;
-        background-color: #FFFFFF;
-        border-radius: 5%; /* Para esquinas redondeadas */
-        padding: 0px; /* Añadir un poco de espacio alrededor del icono */
-        font-size: 60px;
-        display: inline-block; /* Mantener el tamaño adecuado del ícono */
     }
     .linkedin {
         img {
