@@ -34,6 +34,7 @@ header {
     z-index: 1; /* Para posicioname encima + (positivo)*/
     padding: 1.5rem;
     display: flex;
+
     align-items: center; /* Eje Transversdal => Centro vertical */
     justify-content: space-between; /* Separo con el mayor espacio entre los contenedores (ancla y naveg)*/
     a {
@@ -62,12 +63,25 @@ header {
     ul {
         list-style: none; /* Quito marcadores */
         display: flex; /* Alineo elementos lista horizontalmente */
+        flex-wrap: wrap; /* Permito que los elementos lista se envuelvan */
+        width: 100%; /* Aseguro lista ocupe todo ancho disponible */
         li {
             padding-left: 1rem; /* Separo lista*/
             font-size: 1.3rem;
         }
     }
 }    
+
+
+video {
+    max-width: 100%;
+    border-radius: 45px;
+}
+track {
+    color: #FFFFFF;
+    font-size: 1.5em;
+    font-family: sans-serif;
+}
 
 /* ESTILOS MAIN INDEX*/
 main {
@@ -124,60 +138,84 @@ main {
         }
     }
     /* Estilos sección principal Main .index #valores */
-    
+    .GridPrincipiosValores {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Tres columnas iguales */
+        grid-template-rows: repeat(3, auto);/* Tres filas automáticas */
+        grid-template-areas:
+        "val1 val5 val3"
+        "val2 val5 val4"
+        "val6 val6 val6";
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        margin: 0 1rem;
+      
+        .val1 {
+            grid-area: val1;
+        }
+        .val2 {
+            grid-area: val2;
+        }
+        .val3 {
+            grid-area: val3;
+        }
+        .val4 {
+            grid-area: val4;
+        }
+        .val5 {
+            grid-area: val5;
+            img{
+                border-radius: 3rem;
+                width: 100%;
+            }
+        }
+        .val6 {
+            grid-area: val6;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+        .val1, .val2, .val3, .val4, .val6 {
+            background-color: #757575;
+            color: #FFFFFF;
+            border-radius: 2rem;
+            padding-bottom: 16px;
+            h3 {
+                padding-top: 16px;
+                padding-left: 16px;
+            }
+            p {
+                padding-top: 16px;
+            }
+        }
+    }
+}
+.vison {
+    display: flex;
+    align-items: center; /* Eje secundario*/
+    img {
+        border-radius: 2rem;
+        width: 75vh;
+        margin-left: 1rem;
+    }
+    p {
+        font-size: 1.5rem;
+    }
 }
 
-.GridPrincipiosValores {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Tres columnas iguales */
-    grid-template-rows: repeat(3, auto);/* Tres filas automáticas */
-    grid-template-areas:
-    "val1 val5 val3"
-    "val2 val5 val4"
-    "val6 val6 val6";
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
-    margin: 0 1rem;
-  
-    .val1 {
-        grid-area: val1;
+.mision {
+    display: flex;
+    align-items: center; /* Eje secundario*/
+    p {
+        font-size: 1.5rem;
     }
-    .val2 {
-        grid-area: val2;
-    }
-    .val3 {
-        grid-area: val3;
-    }
-    .val4 {
-        grid-area: val4;
-    }
-    .val5 {
-        grid-area: val5;
-        img{
-            border-radius: 3rem;
-            width: 100%;
-        }
-    }
-    .val6 {
-        grid-area: val6;
-        margin: 0 auto;
-        margin-bottom: 20px;
-    }
-    .val1, .val2, .val3, .val4, .val6 {
-        background-color: #757575;
-        color: #FFFFFF;
+    img {
         border-radius: 2rem;
-        padding-bottom: 16px;
-        h3 {
-            padding-top: 16px;
-            padding-left: 16px;
-        }
-        p {
-            padding-top: 16px;
-        }
+        width: 75vh;
+        margin-right: 1rem;
     }
 }
+
 
 /* PAGINA productos.html */
 .productos {
